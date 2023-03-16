@@ -31,6 +31,6 @@
     "import/no-duplicates": "error",
     "@typescript-eslint/consistent-type-imports": "error"
     // NextJS не дает пользоваться именнованным экспортом в компонентах
-    // "import/no-default-export": "error",
+    // "import/no-default-export": "error", 
   }
 }

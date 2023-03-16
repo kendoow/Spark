@@ -1,3 +1,5 @@
+
 export default function Home() {
-	return <span>Initial NextJS Application</span>;
+	return <p>Inital next js app</p>;
+   
 }

@@ -1,0 +1,18 @@
+name: CI
+run-name: Pushed to ${{ github.ref_type }} ${{ github.ref_name }} by ${{ github.actor }}
+on: [ push ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16.16.0'
+      - name: "Install Dependencies"
+        run: npm ci
+      - name: "Run Linter"
+        run: npm run lint
+      - name: "Run TypeScript Compilation"
+        run: npm run ts 

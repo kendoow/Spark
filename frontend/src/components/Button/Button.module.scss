@@ -1,0 +1,32 @@
+.btn {
+	font-family: 'Poppins', sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 29px;
+   
+	border-radius: 3px;
+}
+.small {
+	font-style: normal;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 29px;
+    padding: 5px 25px;
+}
+.medium {
+	font-style: normal;
+	font-weight: 500;
+	font-size: 22px;
+	line-height: 29px;
+	padding: 17px 115px;
+}
+.primary {
+	background: #151515;
+	color: #e0f1e7;
+}
+.secondary {
+    border: 1px solid #151515;
+    background: #e0f1e7;
+	color: #151515;
+}

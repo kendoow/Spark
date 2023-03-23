@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "eslint": "eslint src/**/*.{js,ts,jsx,tsx} --no-error-on-unmatched-pattern",
+    "stylelint": "stylelint src/**/*{.scss,.module.scss}",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "prepare": "cd .. && husky install frontend/.husky"
@@ -43,6 +44,9 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-storybook": "^0.6.11",
     "husky": "^8.0.3",
-    "sass": "^1.59.3"
+    "sass": "^1.59.3",
+    "stylelint": "^15.2.0",
+		"stylelint-config-recommended-scss": "^9.0.1",
+		"stylelint-config-standard-scss": "^7.0.1"
   }
 }

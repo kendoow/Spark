@@ -1,0 +1,15 @@
+{
+	"extends": ["stylelint-config-standard-scss"],
+	"rules": {
+		"indentation": "tab",
+		"selector-class-pattern": "[a-zA-z-]",
+		"color-hex-case": "lower",
+		"color-no-invalid-hex": true,
+		"color-named": "never",
+		"string-quotes": "double",
+		"max-empty-lines": 1,
+		"no-empty-first-line": true,
+		"declaration-no-important": true,
+		"selector-combinator-space-after": "always"
+	}
+}

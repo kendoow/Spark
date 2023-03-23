@@ -1,0 +1,76 @@
+name: build frontend
+
+on:
+    push:
+        branches:
+            - trunk
+        paths:
+            - 'frontend/**'
+            - '.github/workflows/frontend.yaml'
+            - '.github/scripts/frontend/**'
+    pull_request:
+        branches:
+            - trunk
+        paths:
+            - 'frontend/**'
+            - '.github/workflows/frontend.yaml'
+            - '.github/scripts/frontend/**'
+
+env:
+    PATH_BUILD_SCRIPT: .github/scripts/frontend/build.sh
+    PATH_LINTERS_SCRIPT: .github/scripts/frontend/linters.sh
+    PATH_INSTALL_DEPS_SCRIPT: .github/scripts/frontend/installDependencies.sh
+    PATH_PERMISSIONS_SCRIPT: .github/scripts/common/permissions.sh
+    IS_FRONTEND: 1
+
+jobs:
+    build:
+        strategy:
+            matrix:
+                # версии NodeJS
+                nodeVersion: [14.x, 16.x, 18.x]
+        runs-on: ubuntu-latest
+        steps:
+            # Получаем код из репозитория github
+            - name: Git repository code
+              id: git
+              uses: actions/checkout@v3
+
+            # Кешируем папку node_modules, что бы не устанавливать зависимости каждый раз
+            - name: Cache Dependencies
+              id: cache
+              uses: actions/cache@v3
+              with:
+                  path: ./frontend/node_modules
+                  key: node_modules - ${{ hashFiles('**/pnpm-lock.json') }}
+
+            # Устанавливаем NodeJS
+            - name: Install NodeJS
+              id: node
+              uses: actions/setup-node@v3
+              with:
+                  node_version: ${{ matrix.nodeVersion }}
+
+            # Даем разрешение выполнять скриптам
+            - name: Permissions Scripts
+              id: permissions
+              run: |
+                  chmod +x $PATH_INSTALL_DEPS_SCRIPT 
+                  bash $PATH_PERMISSIONS_SCRIPT
+
+            # Устанавливаем зависимости
+            - name: Install Modules
+              if: steps.cache.outputs.cache-hit != 'true'
+              id: node_modules
+              run: $PATH_INSTALL_DEPS_SCRIPT
+            # Линтеры
+            - name: Linters
+              id: linters
+              run: $PATH_LINTERS_SCRIPT
+              shell: bash
+
+            # Сборка
+            - name: Build
+              id: build
+              run: $PATH_BUILD_SCRIPT
+              shell: bash

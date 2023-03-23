@@ -20,6 +20,13 @@ code {
 	outline: none;
 }
 
+a,
+a:visited,
+a:hover {
+	text-decoration: none;
+	font-family: Roboto, sans-serif;
+}
+
 a:focus,
 a:active {
 	outline: none;
@@ -60,16 +67,6 @@ input::-webkit-inner-spin-button {
 
 input::-ms-clear {
 	display: none;
-}
-
-a,
-a:visited {
-	text-decoration: none;
-	font-family: Roboto, sans-serif;
-}
-
-a:hover {
-	text-decoration: none;
 }
 
 ul li {

@@ -8,6 +8,7 @@ on:
             - 'frontend/**'
             - '.github/workflows/frontend.yaml'
             - '.github/scripts/frontend/**'
+            - '.github/scripts/common/**'
     pull_request:
         branches:
             - trunk
@@ -15,6 +16,7 @@ on:
             - 'frontend/**'
             - '.github/workflows/frontend.yaml'
             - '.github/scripts/frontend/**'
+            - '.github/scripts/common/**'
 
 env:
     PATH_BUILD_SCRIPT: .github/scripts/frontend/build.sh
@@ -36,14 +38,6 @@ jobs:
               id: git
               uses: actions/checkout@v3
 
-            # Кешируем папку node_modules, что бы не устанавливать зависимости каждый раз
-            - name: Cache Dependencies
-              id: cache
-              uses: actions/cache@v3
-              with:
-                  path: ./frontend/node_modules
-                  key: node_modules - ${{ hashFiles('**/pnpm-lock.json') }}
-
             # Устанавливаем NodeJS
             - name: Install NodeJS
               id: node
@@ -60,7 +54,6 @@ jobs:
 
             # Устанавливаем зависимости
             - name: Install Modules
-              if: steps.cache.outputs.cache-hit != 'true'
               id: node_modules
               run: $PATH_INSTALL_DEPS_SCRIPT
             # Линтеры

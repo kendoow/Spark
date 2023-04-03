@@ -1,0 +1,16 @@
+@import "@styles/variables";
+
+.header {
+	position: sticky;
+	left: 0;
+	right: 0;
+	top: 0;
+	z-index: 20;
+	width: 100%;
+	max-width: $descktop-container;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 32px;
+}

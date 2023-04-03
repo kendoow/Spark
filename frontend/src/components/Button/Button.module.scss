@@ -1,10 +1,15 @@
+@import "@styles/variables";
+
 .btn {
-	font-style: normal;
 	font-weight: 700;
 	font-size: 18px;
 	line-height: 29px;
+	border: 1px solid $black;
 	border-radius: 3px;
-	font-family: Poppins, sans-serif;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .small {
@@ -12,10 +17,10 @@
 	font-weight: 700;
 	line-height: 29px;
 	padding: 5px 25px;
-	font-size: 18px;
 }
 
 .medium {
+	width: 358px;
 	font-style: normal;
 	font-weight: 500;
 	font-size: 22px;
@@ -24,12 +29,96 @@
 }
 
 .primary {
-	background: #151515;
+	background: $black;
 	color: #e0f1e7;
+	transition: 0.1s;
+	position: relative;
+	z-index: 10;
+
+	&::before {
+		display: none;
+		position: absolute;
+		content: "";
+		transition: 0.2s;
+		left: 5px;
+		bottom: -5px;
+		z-index: -1;
+		border-radius: 3px;
+		border: 1px solid $black;
+		width: 100%;
+		height: 100%;
+	}
+
+	&:active {
+		background: $black-pressed;
+
+		&::before {
+			border: 1px solid $black-pressed;
+		}
+	}
+
+	&:hover {
+		transform: translateX(-5px) translateY(-5px);
+		transition: 0.2s;
+
+		&::before {
+			display: block;
+		}
+	}
 }
 
 .secondary {
-	border: 1px solid #151515;
 	background: #e0f1e7;
-	color: #151515;
+	color: $black;
+	transition: 0.1s;
+	position: relative;
+	z-index: 2;
+
+	&::before {
+		overflow: hidden;
+		display: none;
+		position: absolute;
+		content: "";
+		transition: 0.2s;
+		left: 5px;
+		bottom: -5px;
+		z-index: -1;
+		border-radius: 3px;
+
+		// border: 1px solid #000;
+		width: 100%;
+		height: 100%;
+	}
+
+	&:hover {
+		box-shadow: 5px 5px #000;
+		transform: translateX(-5px) translateY(-5px);
+		transition: 0.2s;
+
+		&::before {
+			display: block;
+		}
+	}
+
+	&:disabled {
+		color: $green-disabled;
+		border: 1px solid $green-disabled;
+		cursor: auto;
+	}
+}
+
+.link {
+	background-color: transparent;
+	transition: 0.2s;
+	border: none;
+
+	&:hover {
+		transition: 0.2s;
+		background-color: $green-link;
+	}
+
+	&:active {
+		transition: 0.2s;
+		background-color: $green-active;
+	}
 }

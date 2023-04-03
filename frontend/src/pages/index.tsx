@@ -1,9 +1,9 @@
-import {Poppins} from 'next/font/google';
-import { Button } from '../components/Button/Button';
+import { Button } from '@components/Button/Button';
+import { Poppins } from 'next/font/google';
 
 const popins = Poppins({
-	subsets:['latin'],
-	weight:['400', '500', '600', '700' ],
+	subsets: ['latin'],
+	weight: ['400', '500', '600', '700'],
 });
 
 export default function Home() {
@@ -12,5 +12,4 @@ export default function Home() {
 			<Button> 1231</Button>
 		</main>
 	);
-
 }

@@ -29,8 +29,7 @@
     "indent": ["error", "tab"],
     "max-len": ["error", { "code": 120, "ignoreComments": true, "ignoreUrls": true }],
     "import/no-duplicates": "error",
+    "import/no-unresolved": "off",
     "@typescript-eslint/consistent-type-imports": "error"
-    // NextJS не дает пользоваться именнованным экспортом в компонентах
-    // "import/no-default-export": "error", 
   }
 }

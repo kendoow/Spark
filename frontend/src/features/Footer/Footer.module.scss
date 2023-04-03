@@ -1,0 +1,20 @@
+@import "../../styles/variables";
+
+.container {
+	max-width: $descktop-container;
+	margin: 0 auto;
+	padding-top: 10px;
+	margin-top: 100px;
+	padding-bottom: 30px;
+	position: relative;
+
+	&::before {
+		content: "";
+		height: 4px;
+		width: 100%;
+		background-color: #000;
+		top: -10px;
+		position: absolute;
+		border-radius: 5px;
+	}
+}

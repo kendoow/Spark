@@ -1,0 +1,36 @@
+.select {
+	display: flex;
+	align-items: center;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 29px;
+	position: relative;
+
+	&Selected {
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+		
+		&Arrow {
+			margin: 0 10px;
+			transition: 0.3s ease-in-out;
+		}
+
+		&:hover {
+			.selectSelectedArrow {
+				margin-top: 5px;
+			}
+		}
+	}
+
+	&Content {
+		top: 30px;
+		position: absolute;
+
+		&Item {
+			display: block;
+			cursor: pointer;
+		}
+	}
+}

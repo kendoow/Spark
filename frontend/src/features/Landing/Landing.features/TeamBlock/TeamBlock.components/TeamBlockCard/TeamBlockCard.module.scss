@@ -1,0 +1,70 @@
+@import "@styles/variables";
+
+.container {
+	background-color: transparent;
+	max-width: 575px;
+	height: 200px;
+	border: 3px solid $black;
+	border-radius: 10px;
+	display: flex;
+	transition: 0.2s;
+
+	&:hover {
+		box-shadow:  15px 15px $black;
+		transform: translateX(-15px) translateY(-15px);
+	}
+
+	.links {
+		margin: 40px;
+		max-width: 155px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+
+		.name {
+			font-style: normal;
+			font-weight: 700;
+			font-size: 24px;
+			line-height: 29px;
+			color: $black;
+		}
+
+		.role {
+			margin-top: 15px;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 29px;
+			margin-bottom: 35px;
+		}
+
+		.icons {
+			display: flex;
+			align-items: center;
+
+			.icon {
+				margin-right: 5px;
+			}
+		}
+	}
+
+	.description {
+		display: flex;
+		max-width: 300px;
+		flex-wrap: wrap;
+		margin: 40px 20px;
+		color: $black;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 32px;
+		line-height: 42px;
+	}
+}
+
+.right {
+	&:hover {
+		box-shadow:  -15px 15px $black;
+		transform: translateX(15px) translateY(-15px);
+	}
+}

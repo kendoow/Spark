@@ -19,7 +19,8 @@
 			"@components/*": ["./src/components/*"],
 			"@features/*": ["./src/features/*"],
 			"@assets/*": ["./src/assets/*"],
-			"@pages/*": ["./src/pages/*"]
+			"@pages/*": ["./src/pages/*"],
+			"@hooks/*": ["./src/hooks/*"]
 		}
 	},
 	"include": [

@@ -1,0 +1,25 @@
+@import "@styles/variables";
+
+.intro {
+	max-width: $descktop-container;
+	margin: 0 auto;
+	margin-top: 100px;
+	margin-bottom: 290px;
+
+	&Title {
+		font-style: normal;
+		font-weight: 500;
+		font-size: 96px;
+		line-height: 144px;
+		margin-bottom: 15px;
+	}
+
+	&Description {
+		font-style: normal;
+		font-weight: 500;
+		font-size: 32px;
+		line-height: 48px;
+		max-width: 410px;
+		margin-bottom: 40px;
+	}
+}

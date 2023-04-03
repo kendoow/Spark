@@ -1,0 +1,36 @@
+.main {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	&Title {
+		font-style: normal;
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 29px;
+	}
+
+	&Links {
+		display: flex;
+		gap: 45px;
+		align-items: center;
+
+		&Element {
+			font-style: normal;
+			font-weight: 500;
+			font-size: 16px;
+			line-height: 29px;
+			cursor: pointer;
+		}
+	}
+
+	&Logo {
+		cursor: pointer;
+		transition: 0.5s;
+
+		&:hover {
+			transform: rotate(360deg) scale(1.3);
+			transition: 0.5s;
+		}
+	}
+}

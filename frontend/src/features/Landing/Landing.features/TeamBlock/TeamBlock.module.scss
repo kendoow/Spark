@@ -1,0 +1,20 @@
+@import "@styles/variables";
+
+.teamBlock {
+	max-width: 1000px;
+	margin: 0 auto;
+
+	&Side {
+		margin-bottom: 32px;
+		display: flex;
+		gap: 35px;
+
+		&Text {
+			font-style: normal;
+			font-weight:600;
+			font-size: 150px;
+			line-height: 225px;
+			color: $black;
+		}
+	}
+}

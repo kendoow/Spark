@@ -1,0 +1,41 @@
+linters-settings:
+  # Настройки линтеров
+  govet:
+    # Отключить все рекомендации
+    disabled: true
+
+  golint:
+    # Отключить все рекомендации
+    disabled: true
+
+  deadcode:
+    # Оставить только ошибки, отключить предупреждения
+    severity: error
+
+  # Другие линтеры можно настроить аналогичным образом
+  
+linters:
+  enable-all: true # Включить все линтеры
+  
+  # Линтеры, которые нужно исключить из проверки
+  disable:
+    - lll
+    - varcheck
+    - typecheck
+    - ifshort
+    - maligned
+    - nosnakecase
+    - interfacer
+    - exhaustivestruct
+    - scopelint
+    - golint
+    - structcheck
+    - deadcode
+    # Полный список всех линтеров смотри здесь: 
+    # https://github.com/golangci/golangci-lint/tree/master/pkg/config#list-of-supported-linters
+  
+  # Настройки линтеров, конкретных для каждого проекта, например: 
+  fasthttp:
+    enable:
+      - unused
+      - unusedfuncs

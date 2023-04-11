@@ -21,7 +21,8 @@
 		"next": "13.2.1",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
-		"typescript": "4.9.5"
+		"typescript": "4.9.5",
+		"ua-parser-js": "^1.0.35"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.21.3",
@@ -34,6 +35,7 @@
 		"@storybook/manager-webpack5": "^6.5.16",
 		"@storybook/react": "^6.5.16",
 		"@storybook/testing-library": "^0.0.13",
+		"@types/ua-parser-js": "^0.7.36",
 		"@typescript-eslint/eslint-plugin": "^5.53.0",
 		"@typescript-eslint/parser": "^5.53.0",
 		"babel-loader": "^8.3.0",

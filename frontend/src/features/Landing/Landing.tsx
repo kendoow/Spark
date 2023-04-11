@@ -1,5 +1,5 @@
 import { Footer } from '@features/Footer/Footer';
-import { Header } from './Landing.features/Header/Header';
+import { Header } from './Landing.features/Header';
 import { IntroBlock } from './Landing.features/IntroBlock/IntroBlock';
 import { TeamBlock } from './Landing.features/TeamBlock/TeamBlock';
 

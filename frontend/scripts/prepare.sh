@@ -1,7 +1,10 @@
 #!/bin/bash
 
 echo "Start prepare script..."
-chmod +x ./scripts/storybook.sh
+pathToPermissionScript="./scripts/permissionsScripts.sh"
+
+chmod +x $pathToPermissionScript
+$pathToPermissionScript
 
 # Устанавливаем husky для pre-commit hook
 cd ..

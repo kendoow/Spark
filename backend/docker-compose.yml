@@ -17,18 +17,16 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 123
-      POSTGRES_DB: spark
+      POSTGRES_DB: spark_test
     networks:
       - spark
   auth:
     build: ./apps/auth
     environment:
-      DATABASE_URL: postgresql://postgres:123@test-db/spark
+      DATABASE_URL: postgresql://postgres:123@localhost:5434/spark
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - "8080:8080"
-    depends_on:
-      - test-db  
-    networks:
-      - spark      
+      - 8080:8080
 networks:
   spark:
